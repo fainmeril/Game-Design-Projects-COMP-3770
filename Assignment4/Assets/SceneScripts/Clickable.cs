@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 
 public class Clickable : MonoBehaviour
@@ -23,7 +24,7 @@ public class Clickable : MonoBehaviour
 
     private void MouseHandler()
     {
-        if (Input.GetMouseButtonDown((int)MouseButton.LeftMouse))
+        if (Input.GetMouseButtonDown((int)MouseButton.LeftMouse) && EventSystem.current.IsPointerOverGameObject() == false)
         {
             Debug.Log(MouseButton.LeftMouse);
 
@@ -35,7 +36,7 @@ public class Clickable : MonoBehaviour
                 PaintTagReader(hitTemp);
             }
         }
-        else if (Input.GetMouseButtonDown((int)MouseButton.RightMouse))
+        else if (Input.GetMouseButtonDown((int)MouseButton.RightMouse) && EventSystem.current.IsPointerOverGameObject() == false)
         {
             Debug.Log(MouseButton.RightMouse);
 
@@ -81,13 +82,13 @@ public class Clickable : MonoBehaviour
 
     private void PaintTagReader(GameObject gameObject)
     {
-        if(gameObject.tag == "Brush")
+        if (gameObject.tag == "Brush")
         {
             Debug.Log(gameObject.tag);
 
             UpdateBrush(gameObject);
         }
-        else if(gameObject.tag == "SpawnedObject")
+        else if (gameObject.tag == "SpawnedObject")
         {
             Debug.Log(gameObject.tag);
         }
@@ -96,6 +97,10 @@ public class Clickable : MonoBehaviour
             Debug.Log(gameObject.tag);
 
             DrawSphere();
+        }
+        else if(gameObject.tag == "UIElement")
+        {
+            Debug.Log(gameObject.tag);
         }
 
     }
