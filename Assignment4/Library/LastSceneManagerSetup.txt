@@ -1,21 +1,21 @@
 sceneSetups:
-- path: Assets/Scenes/BubblePopper.unity
-  isLoaded: 1
-  isActive: 0
-  isSubScene: 0
-- path: Assets/Scenes/CubeNinja.unity
-  isLoaded: 1
-  isActive: 0
-  isSubScene: 0
 - path: Assets/Scenes/MainMenu.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
+- path: Assets/Scenes/BubblePopper.unity
+  isLoaded: 0
+  isActive: 0
+  isSubScene: 0
 - path: Assets/Scenes/Paint.unity
-  isLoaded: 1
+  isLoaded: 0
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Scenes/CubeNinja.unity
+  isLoaded: 0
   isActive: 0
   isSubScene: 0
 - path: Assets/Scenes/Score.unity
-  isLoaded: 1
+  isLoaded: 0
   isActive: 0
   isSubScene: 0
